@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Feedback Form – 7 Star Luxury</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>"Where Every Moment is Majestic – The World of Taj"</h1>
+    <h2>“Your Thoughts, Our Promise.”</h2>
+  </header>
+
+  <form
+    class="feedback-form"
+    action="https://formspree.io/f/xovyaelp"
+    method="POST"
+  >
+    <!-- Guest Details -->
+    <section class="guest-section">
+      <h3>Guest Information</h3>
+
+      <label for="first-name">First Name*</label>
+      <input type="text" id="first-name" name="first_name" required placeholder="Enter first name" />
+
+      <label for="last-name">Last Name*</label>
+      <input type="text" id="last-name" name="last_name" required placeholder="Enter last name" />
+
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" required placeholder="abc123@gmail.com" />
+
+      <label for="mobile">Mobile*</label>
+      <input type="tel" id="mobile" name="mobile" required placeholder="+91" />
+
+      <label for="checkin">Check-in Date</label>
+      <input type="date" id="checkin" name="checkin" />
+
+      <label for="checkout">Check-out Date</label>
+      <input type="date" id="checkout" name="checkout" />
+    </section>
+
+    <!-- Rating Section -->
+    <section class="rating-section">
+      <h3>Rate Your Experience</h3>
+
+      <div class="rating-category">
+        <p>Service Quality</p>
+        <div class="star-rating">
+          <input type="radio" id="service5" name="service_quality" value="5" /><label for="service5">★</label>
+          <input type="radio" id="service4" name="service_quality" value="4" /><label for="service4">★</label>
+          <input type="radio" id="service3" name="service_quality" value="3" /><label for="service3">★</label>
+          <input type="radio" id="service2" name="service_quality" value="2" /><label for="service2">★</label>
+          <input type="radio" id="service1" name="service_quality" value="1" /><label for="service1">★</label>
+        </div>
+      </div>
+
+      <div class="rating-category">
+        <p>Cleanliness</p>
+        <div class="star-rating">
+          <input type="radio" id="clean5" name="cleanliness" value="5" /><label for="clean5">★</label>
+          <input type="radio" id="clean4" name="cleanliness" value="4" /><label for="clean4">★</label>
+          <input type="radio" id="clean3" name="cleanliness" value="3" /><label for="clean3">★</label>
+          <input type="radio" id="clean2" name="cleanliness" value="2" /><label for="clean2">★</label>
+          <input type="radio" id="clean1" name="cleanliness" value="1" /><label for="clean1">★</label>
+        </div>
+      </div>
+
+      <div class="rating-category">
+        <p>Food Quality</p>
+        <div class="star-rating">
+          <input type="radio" id="food5" name="food" value="5" /><label for="food5">★</label>
+          <input type="radio" id="food4" name="food" value="4" /><label for="food4">★</label>
+          <input type="radio" id="food3" name="food" value="3" /><label for="food3">★</label>
+          <input type="radio" id="food2" name="food" value="2" /><label for="food2">★</label>
+          <input type="radio" id="food1" name="food" value="1" /><label for="food1">★</label>
+        </div>
+      </div>
+
+      <div class="rating-category">
+        <p>Staff Behaviour</p>
+        <div class="star-rating">
+          <input type="radio" id="staff5" name="staff" value="5" /><label for="staff5">★</label>
+          <input type="radio" id="staff4" name="staff" value="4" /><label for="staff4">★</label>
+          <input type="radio" id="staff3" name="staff" value="3" /><label for="staff3">★</label>
+          <input type="radio" id="staff2" name="staff" value="2" /><label for="staff2">★</label>
+          <input type="radio" id="staff1" name="staff" value="1" /><label for="staff1">★</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Feedback -->
+    <section>
+      <h3>Your Suggestions</h3>
+      <textarea name="suggestion" rows="6" placeholder="Type your ideas here to help us improve…"></textarea>
+    </section>
+
+    <button type="submit" class="submit-btn">Submit Feedback</button>
+
+    <p class="thank-you-msg">
+      "Thank you for choosing to stay with us. Your feedback helps us deliver exceptional luxury experiences."
+    </p>
+  </form>
+
+  <!-- Thank You Modal -->
+  <div id="thankYouModal">
+    <div class="modal-content">
+      🌟 Thank you for your valuable feedback! 🌟 <br />
+      We look forward to welcoming you again at The World of Taj.
+    </div>
+  </div>
+
+  <!-- About + Contact -->
+  <footer>
+    <h3>About Us</h3>
+    <p>
+      “Hyatt delivers world-class hospitality with unmatched comfort,
+      personalized services, and unforgettable luxury experiences. Every detail
+      is crafted to ensure your stay is extraordinary.”
+    </p>
+
+    <h4>Contact Us</h4>
+    <p><strong>Phone:</strong> 123465535</p>
+    <p><strong>Email:</strong> Country123@gmail.com</p>
+    <p><strong>Address:</strong> 123 Luxury Avenue, Downtown City</p>
+  </footer>
+
+  <!-- Modal Script -->
+  <script>
+    const form = document.querySelector('.feedback-form');
+    const modal = document.getElementById('thankYouModal');
+
+    form.addEventListener('submit', () => {
+      modal.classList.add('show');
+      setTimeout(() => {
+        modal.classList.remove('show');
+      }, 3500);
+    });
+  </script>
+
+  <!-- External Script (optional if you add more JS) -->
+  <script src="script.js"></script>
+</body>
+</html>
