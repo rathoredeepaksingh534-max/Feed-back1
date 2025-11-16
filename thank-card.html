@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Royal Hospitality</title>
+  <link rel="stylesheet" href="thank-card.css" />
+</head>
+
+<body>
+  <div id="printArea" class="card">
+    <h2 class="line-top">~ With Gratitude ~</h2>
+    <h1 class="thank">Thank You</h1>
+    <h3 class="guest">Dear <span id="guestName"></span></h3>
+
+    <p class="msg">
+      We sincerely appreciate your valuable feedback. Your comfort and satisfaction are our highest priorities.
+    </p>
+    <div class="footer">
+      — Warm Regards <br>
+      <span>THE GRAND ROYAL PALACE HOTEL</span>
+    </div>
+  </div>
+
+  <a id="backHomeBtn" href="index.html" class="back-btn" style="display: none;">← Back to Home</a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script>
+    window.onload = function () {
+      const element = document.getElementById("printArea");
+
+      let name = localStorage.getItem("guestName");
+      document.getElementById("guestName").innerText = name ? name : "Valued Guest";
+
+      const opt = {
+        margin: 0.3,
+        filename: "ThankYou_RoyalHotel.pdf",
+        image: { type: "jpeg", quality: 1 },
+        html2canvas: { scale: 4 },
+        jsPDF: { unit: "in", format: "A4", orientation: "portrait" }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        document.getElementById("backHomeBtn").style.display = "inline-block";
+      });
+    };
+  </script>
+</body>
+</html>

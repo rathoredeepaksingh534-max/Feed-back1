@@ -1,0 +1,127 @@
+/* Page Background */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #1b1b1b, #000);
+  font-family: 'Playfair Display', serif;
+}
+
+/* Card */
+.card {
+  width: 600px;
+  padding: 50px 50px;
+  text-align: center;
+  border-radius: 16px;
+
+  /* SOLID BACKGROUND FOR PDF */
+  background: #2702024a; /* light cream */
+  
+  /* Remove blur for printing */
+  backdrop-filter: none;
+
+  /* Gold elegant border */
+  border: 2px solid #d6b84b;
+  box-shadow: 0px 0px 10px rgba(214, 184, 75, 0.35);
+
+  /* Darker readable gold text */
+  color: #c19a32;
+}
+
+/* Text styles */
+.line-top {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  color: #ead9a1;
+}
+
+.thank {
+  font-size: 3.2rem;
+  margin: 5px 0 10px;
+  font-family: 'Cinzel', serif;
+  color: #b8942c;
+
+  letter-spacing: 3px;
+}
+
+.guest {
+  font-size: 1.25rem;
+color: #b89231;
+  margin-bottom: 20px;
+}
+
+.msg {
+  font-size: 1.15rem;
+  line-height: 1.7;
+color: #9b7f2b;
+
+  margin-bottom: 25px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #d9b56b;
+}
+
+.footer span {
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  color: #f7d27b;
+}
+
+
+.back-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #c9ac61;
+  border-radius: 20px;
+  color: #c9ac61;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #c9ac61;
+  color: #111;
+}
+
+
+/* Only for PDF rendering */
+@media print {
+  body {
+    background: white !important;
+  }
+
+  .card {
+    background: #fffdf5 !important;  /* soft cream */
+    color: #b38b2a !important; /* luxury readable gold */
+    border: 2px solid #d5b44d !important;
+    box-shadow: none !important;
+  }
+
+  .thank {
+    color: #b38b2a !important;
+  }
+
+  .guest {
+    color: #b38b2a !important;
+  }
+
+  .msg {
+    color: #9c7f29 !important;
+  }
+
+  .footer,
+  .footer span {
+    color: #b38b2a !important;
+  }
+}

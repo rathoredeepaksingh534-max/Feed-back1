@@ -13,18 +13,16 @@
     <h2>“Your Thoughts, Our Promise.”</h2>
   </header>
 
-  <form
-    class="feedback-form"
-    action="https://formspree.io/f/xovyaelp"
-    method="POST"
-  >
-    <!-- Guest Details -->
+  <form id="feedbackForm" class="feedback-form" action="https://formspree.io/f/xovyaelp" method="POST">
+
+   
+  
     <section class="guest-section">
       <h3>Guest Information</h3>
 
       <label for="first-name">First Name*</label>
       <input type="text" id="first-name" name="first_name" required placeholder="Enter first name" />
-
+      
       <label for="last-name">Last Name*</label>
       <input type="text" id="last-name" name="last_name" required placeholder="Enter last name" />
 
@@ -41,7 +39,6 @@
       <input type="date" id="checkout" name="checkout" />
     </section>
 
-    <!-- Rating Section -->
     <section class="rating-section">
       <h3>Rate Your Experience</h3>
 
@@ -90,7 +87,6 @@
       </div>
     </section>
 
-    <!-- Additional Feedback -->
     <section>
       <h3>Your Suggestions</h3>
       <textarea name="suggestion" rows="6" placeholder="Type your ideas here to help us improve…"></textarea>
@@ -103,7 +99,6 @@
     </p>
   </form>
 
-  <!-- Thank You Modal -->
   <div id="thankYouModal">
     <div class="modal-content">
       🌟 Thank you for your valuable feedback! 🌟 <br />
@@ -111,35 +106,15 @@
     </div>
   </div>
 
-  <!-- About + Contact -->
   <footer>
     <h3>About Us</h3>
-    <p>
-      “Hyatt delivers world-class hospitality with unmatched comfort,
-      personalized services, and unforgettable luxury experiences. Every detail
-      is crafted to ensure your stay is extraordinary.”
-    </p>
-
+    <p>“Hyatt delivers world-class hospitality with unmatched comfort."</p>
     <h4>Contact Us</h4>
     <p><strong>Phone:</strong> 123465535</p>
     <p><strong>Email:</strong> Country123@gmail.com</p>
     <p><strong>Address:</strong> 123 Luxury Avenue, Downtown City</p>
   </footer>
 
-  <!-- Modal Script -->
-  <script>
-    const form = document.querySelector('.feedback-form');
-    const modal = document.getElementById('thankYouModal');
-
-    form.addEventListener('submit', () => {
-      modal.classList.add('show');
-      setTimeout(() => {
-        modal.classList.remove('show');
-      }, 3500);
-    });
-  </script>
-
-  <!-- External Script (optional if you add more JS) -->
   <script src="script.js"></script>
 </body>
 </html>
